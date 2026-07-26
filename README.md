@@ -25,6 +25,9 @@ The documentation is cleanly organized into 5 dedicated, easy-to-understand modu
 5. **[05_MOBILE_APP_SPECIFICATION.md](file:///home/jeevan/Desktop/my%20projects/smart-watch/05_MOBILE_APP_SPECIFICATION.md)**  
    *React Native companion mobile app architecture, free native STT/TTS integration, BLE manager, and direct SIM SMS emergency SOS dispatch.*
 
+6. **[06_EXISTING_PROJECTS_AND_GITHUB_COMPARISON.md](file:///home/jeevan/Desktop/my%20projects/smart-watch/06_EXISTING_PROJECTS_AND_GITHUB_COMPARISON.md)**  
+   *Comprehensive analysis of existing open-source GitHub projects (SoundWatch, AudioCompass, Sonavi) vs. this custom ESP32-S3 Deaf Smart Watch system.*
+
 ---
 
 ## ⚡ Quick Start Options
