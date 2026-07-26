@@ -17,18 +17,30 @@ This guide provides a comprehensive, step-by-step walkthrough for collecting aud
 A neural network is only as good as its training dataset. Follow these data rules carefully:
 
 ### 1. Target Sound Classes
-Collect data for **6 distinct audio categories**:
+Collect data for **7 distinct audio categories**, optimized for Deaf and Hard of Hearing (DHH) life safety, communication, and home awareness:
 
-| Category Label | Sound Description | Examples to Record |
-| :--- | :--- | :--- |
-| `sirens` | Emergency vehicle horns/sirens | Police car sirens, ambulance, fire truck horns |
-| `doorbell` | Door knocking & electronic chimes | Front door knocking, ding-dong chimes, intercom buzzers |
-| `fire_alarm` | High-pitched continuous alarms | Smoke detector beeps, building fire alarms |
-| `baby_crying` | Infant crying & distress sounds | Baby crying audio samples |
-| `dog_barking` | Dog barks & pet alerts | Dog barking, guard dog alerts |
-| `noise` | Background ambient sounds | Fan hums, street traffic, room silence, background TV |
+| Category Label | Priority Tier | Sound Description & Acoustic Profile | Examples to Record | DHH User Utility |
+| :--- | :--- | :--- | :--- | :--- |
+| `fire_alarm` | 🚨 Emergency | High-pitched continuous beeps ($2.5-3.5\text{ kHz}$) or ISO 8201 T3/T4 patterns | Smoke detector alarms, building evacuation horns, fire alarms | **Top Indoor Life Safety:** Crucial while sleeping or working indoors. |
+| `sirens` | 🚨 Emergency | Frequency-sweeping wails/yelps ($500-1500\text{ Hz}$) | Ambulance, police car, fire engine sirens, civil defense horns | **Top Outdoor Safety:** Warns of approaching emergency vehicles while walking. |
+| `car_horn` | ⚡ Critical | High-energy harmonic acoustic bursts ($1-3\text{ kHz}$) | Car horn honks, vehicle reverse beepers, traffic alerts | **Roadway Hazard:** Prevents vehicular collisions in parking lots and streets. |
+| `phone_ringtone` | 📞 Communication | Rhythmic melodic or digital repeating ring tones | Mobile phone ringtones, landline rings, VoIP call alerts | **Social/Call Alert:** Alerts user to incoming calls when phone is in bag/room. |
+| `doorbell_knock` | 🔔 Convenience | Transient impact knock or 2-tone electronic chime | Front door knocking, ding-dong chimes, intercom buzzers | **Domestic Access:** Alerts user to visitors, delivery agents, family. |
+| `baby_crying` | 🍼 Caregiver | Periodic infant vocalization pitch contours ($400-600\text{ Hz}$) | Infant crying, baby distress, toddler screams | **Caregiver Alert:** Essential for deaf parents & infant caregivers. |
+| `noise` | 🎧 Baseline | Broad spectrum background ambient sound (Negative class) | AC fan hum, street traffic hum, room silence, typing, room chatter | **False Positive Control:** Crucial baseline class for model accuracy. |
 
-### 2. Audio Formatting & Quantity Rules
+### 2. Sound Selection Rationale & Exclusion Criteria
+
+To deploy a high-accuracy model on the ESP32-S3 microcontroller ($\sim 24\text{ KB}$ RAM limit), sound classes are strictly prioritized based on accessibility need and acoustic separability:
+
+* **Why Include Mobile Ringtones (`phone_ringtone`)?**  
+  Deaf users rely on visual/tactile alerts for calls (e.g., Video Relay Service, emergency family calls). When the phone is in a bag, pocket, or another room, ringtone sound recognition on the watch ensures key calls are not missed.
+* **Why Exclude Dog Barking & Appliance Timers?**  
+  * *Microwave/Appliance Beeps:* Single $3\text{kHz}$ sine wave beeps frequently overlap with smoke detector alarms. Excluding appliance timers prevents false fire alarm panics.
+  * *Dog Barking:* Barking varies drastically in frequency ($200\text{Hz} - 2\text{kHz}$) and causes high false-positive rates on micro 1D-CNN models.
+  * *Glass Breaking & Thunder:* Thunder is felt physically as low-frequency vibration. Glass breaking is a sub-second transient ($<200\text{ms}$) that is unreliable for a 1-second sliding audio window.
+
+### 3. Audio Formatting & Quantity Rules
 * **Sample Rate:** `16,000 Hz` (16kHz), 16-bit Mono WAV format.
 * **Duration per Class:** Aim for **5 to 10 minutes** of total audio per category.
 * **Data Splitting:** Maintain an **80% Training / 20% Testing** split.
@@ -71,7 +83,7 @@ In Edge Impulse, navigate to **Create Impulse** in the sidebar:
 
 ### Feature Explorer Inspection
 * Look at the 3D Feature Cluster visualization.
-* **Goal:** You should see distinct colored clusters for `sirens`, `doorbell`, `fire_alarm`, and `noise`. If `sirens` and `fire_alarm` overlap heavily, add more distinct training samples.
+* **Goal:** You should see distinct colored clusters for `fire_alarm`, `sirens`, `car_horn`, `phone_ringtone`, `doorbell_knock`, `baby_crying`, and `noise`. If `sirens` and `car_horn` or `fire_alarm` overlap heavily, add more varied distance training samples.
 
 ---
 
@@ -93,7 +105,7 @@ In Edge Impulse, navigate to **Create Impulse** in the sidebar:
 [Dropout Layer (0.25 Rate)]  <-- Prevents Overfitting
            │
            ▼
-[Dense Output Layer (6 Classes - Softmax)]
+[Dense Output Layer (7 Classes - Softmax)]
 ```
 
 3. **Hyperparameters:**
@@ -104,7 +116,7 @@ In Edge Impulse, navigate to **Create Impulse** in the sidebar:
 
 ### Validation Target Metrics:
 * **Accuracy:** Target $\ge 90\%$
-* **Confusion Matrix:** Verify that `sirens` and `doorbell` have zero false classifications into `noise`.
+* **Confusion Matrix:** Verify that `fire_alarm`, `sirens`, and `phone_ringtone` have zero false classifications into `noise`.
 
 ---
 
