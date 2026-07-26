@@ -37,7 +37,7 @@ Do not forget these small components! They are required to connect, switch, and 
 | 12 | **JST-PH 2.0mm 2-Pin Connector Cable** | Plug & play battery connection | 2 pairs | **~₹16 – ₹40** | [Robu.in](https://robu.in/?s=jst+ph+2.0mm+2+pin+connector) · [Sunrom](https://www.sunrom.com/search?q=jst+ph+2+pin) *(⚠️ May not be consistently available on Robu — check alternatives)* |
 | 13 | **Single-Sided PerfBoard PCB (5cm × 7cm)** | Solder final prototype after breadboarding | 2 pcs | **~₹60 – ₹100** (₹30-50/pc) | [Robu.in](https://robu.in/?s=5x7+cm+pcb+board) · [ElectronicsComp](https://www.electronicscomp.com/?s=5x7+cm+pcb) |
 | 14 | **Male & Female 40-Pin Header Strips** | Pin headers for perfboard soldering | 2 strips | **~₹28 – ₹54** (₹14-27/strip) | [Robu.in](https://robu.in/?s=40+pin+male+pin+header+strip) |
-| 15 | **JST-SH 1.0mm Pitch Cable Harness** | Plug & play connection from Waveshare board to breadboard | 1 pc (6-12 pin) | **~₹24 – ₹35** | [Robu.in](https://robu.in/?s=jst+sh+1.0mm+connector) |
+| 15 | **JST-SH 1.0mm Pitch Cable Harness** | Plug & play connection from Waveshare board to breadboard | 2 pc (6-pin / 6P) | **~₹24 – ₹35** | [Robu.in](https://robu.in/?s=jst+sh+1.0mm+6+pin) |
 | 16 | **30 AWG Ultra-Flexible Silicone Wire** | Compact, flexible wiring inside smartwatch enclosure | 5 meters | **~₹25 – ₹40** (₹5/meter) | [Robu.in](https://robu.in/?s=30+awg+silicone+wire) |
 
 💰 **Path 1 Grand Total (Main Modules + All Minor Accessories):** **~₹3,300 – ₹3,780**
