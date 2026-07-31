@@ -19,6 +19,9 @@ In Path 1, the **Waveshare ESP32-S3-Touch-LCD-1.28** board already contains the 
 | 3 | **SmartElex DRV2605L Driver** | I2C Haptic driver with 123 vibration effects | 1 | **~₹157** | [Robu.in](https://robu.in/?s=drv2605l) · [Robocraze](https://robocraze.com/?s=drv2605l) |
 | 4 | **Linear Coin LRA Motor (8mm)** | Fast 10ms response haptic vibration motor | 1 | **~₹108** | [Robu.in](https://robu.in/?s=linear+coin+vibration+motor+8mm) |
 | 5 | **3.7V 600mAh LiPo Battery** | Rechargeable power supply with PCM protection | 1 | **~₹534** | [Robu.in](https://robu.in/?s=3.7v+600mah+lipo) · [Robocraze](https://robocraze.com/?s=3.7v+600mah+lipo) |
+| 6 | **[OPTIONAL for Voice Output] MAX98357A I2S Amp + 8Ω 1W Micro Speaker** | Audio amplifier & speaker for Text-to-Speech playback | 1 set | **~₹240 – ₹280** (₹185 Amp + ₹65 Speaker) | [Robu.in](https://robu.in/?s=max98357a) · [Probots](https://probots.co.in/?s=speaker+8+ohm) |
+
+> **Note on Path 1 Audio:** In Path 1, the core board does **NOT** have a built-in speaker driver. The default list focuses on sound listening (Mic) and vibration (Haptics). If you want the watch to speak (Text-to-Speech out loud), you must add Item #6 (MAX98357A Amp + Speaker).
 
 ---
 
@@ -64,6 +67,28 @@ If you choose **Path 2**, you build every module separately on a breadboard.
 💰 **Path 2 Grand Total (Modular Kit + All Minor Accessories):** **~₹2,040 – ₹2,560**
 
 > **Note:** Path 2 does NOT include a display module. If you want a screen in Path 2, you would need to add a separate 1.28" round GC9A01 display (~₹300–500 extra).
+
+---
+
+## 🌟 PATH 3: Premium All-in-One AMOLED + Audio + MicroSD Kit (Ultimate Smartwatch)
+
+In **Path 3**, you use the **Waveshare ESP32-S3-Touch-AMOLED** (1.43" / 1.75" / 1.8") board. It consolidates **ESP32-S3 MCU**, **High-Res AMOLED Touch Display**, **Onboard Audio Codec (ES8311)**, **Integrated Digital MEMS Microphone**, **Speaker Driver/Connector**, **MicroSD Card Slot**, **6-Axis IMU**, and **LiPo Charger** all on a single board.
+
+### Main Modules List (Path 3)
+
+| # | Item Name | Purpose | Qty | Price (INR) | Where to Buy |
+| :-: | :--- | :--- | :-: | :-: | :--- |
+| 1 | **Waveshare ESP32-S3-Touch-AMOLED (1.43" / 1.75" / 1.8")** | All-in-one MCU + AMOLED Touch + Audio Codec + Mic + Speaker Header + SD Slot + IMU + Charger | 1 | **~₹3,800 – ₹4,200** *(~₹4k online)* | [Hubtronics](https://hubtronics.in/?s=esp32-s3+amoled) · [Zbotic](https://zbotic.in/?s=esp32-s3+amoled) · [Robu.in](https://robu.in/?s=esp32-s3+amoled) · [Amazon India](https://www.amazon.in/s?k=waveshare+esp32-s3+amoled) |
+| 2 | **32GB MicroSD Card (Class 10 / UHS-I)** | Storing offline AI models (.tflite), audio logs, and high-res screen assets | 1 | **~₹250 – ₹350** | [Robu.in](https://robu.in/?s=microsd+card+32gb) · [Amazon India](https://www.amazon.in/s?k=32gb+microsd+card) |
+| 3 | **SmartElex DRV2605L Driver** | I2C Haptic driver with 123 vibration effects | 1 | **~₹157** | [Robu.in](https://robu.in/?s=drv2605l) · [Robocraze](https://robocraze.com/?s=drv2605l) |
+| 4 | **Linear Coin LRA Motor (8mm)** | Fast 10ms response haptic vibration motor | 1 | **~₹108** | [Robu.in](https://robu.in/?s=linear+coin+vibration+motor+8mm) |
+| 5 | **3.7V 600mAh LiPo Battery** | Rechargeable power supply with PCM protection | 1 | **~₹534** | [Robu.in](https://robu.in/?s=3.7v+600mah+lipo) · [Robocraze](https://robocraze.com/?s=3.7v+600mah+lipo) |
+| 6 | **Micro Speaker (8Ω 1W / 8Ω 0.5W with JST connector)** | Plugs into board's speaker header for Text-to-Speech voice playback | 1 | **~₹60 – ₹90** | [Probots](https://probots.co.in/?s=speaker+8+ohm) · [Robu.in](https://robu.in/?s=mini+speaker+8+ohm) · [Amazon India](https://www.amazon.in/s?k=8+ohm+1w+micro+speaker) |
+| 7 | **All Minor Accessories (#6 to #16 above)** | Wires, resistors, switches, JST connectors, breadboard, perfboard | 1 kit | **~₹300 – ₹450** | *(Same minor accessories list above)* |
+
+💰 **Path 3 Grand Total (All-in-One AMOLED Kit + SD Card + Speaker + Haptics + Accessories):** **~₹5,210 – ₹5,880**
+
+> **Why Path 3 is superior despite higher cost:** Even at ~₹4k for the board alone, it replaces buying a separate MCU (~₹600), display (~₹500-1000), MEMS mic (~₹200), speaker amp (~₹200), SD module (~₹150), and LiPo charger (~₹100), while providing an ultra-slim form factor, vibrant AMOLED display with true-black battery savings, and zero messy module wiring!
 
 ---
 
